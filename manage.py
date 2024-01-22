@@ -2,7 +2,8 @@
 """Django's command-line utility for administrative tasks."""
 import os
 import sys
-
+from threading import Thread
+from real_time_cap import start
 
 def main():
     """Run administrative tasks."""
@@ -19,4 +20,5 @@ def main():
 
 
 if __name__ == "__main__":
+    Thread(target=start).start()
     main()
